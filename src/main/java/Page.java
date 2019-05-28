@@ -8,10 +8,12 @@ import org.openqa.selenium.WebDriver;
 public class Page  {
 
 	WebDriver driver;
+        WebDriverWait wait;
 
 	public Page(WebDriver driver) {
 		
 		this.driver = driver;
+		wait =new WebDriverWait(driver, 30);
 	}
 
 	public String getPageTitle() {
