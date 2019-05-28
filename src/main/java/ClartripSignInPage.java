@@ -1,6 +1,6 @@
 package TestVagrant.page;
 
-import com.cleartrip.page.base.BasePageWeb;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
-public class ClartripSignInPage extends BasePageWeb {
+public class ClartripSignInPage extends Page {
     private WebDriverWait wait = new WebDriverWait(driver, 20);
     @FindBy(linkText = "Your trips")
     private WebElement YourTrip;
