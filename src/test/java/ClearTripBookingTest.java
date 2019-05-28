@@ -1,4 +1,4 @@
-package TestVagrant.autotest;
+
 
 import static org.testng.Assert.assertTrue;
 
