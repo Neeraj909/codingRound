@@ -10,7 +10,7 @@ import org.testng.Assert;
 
 
 public class ClartripSignInPage extends Page {
-    private WebDriverWait wait = new WebDriverWait(driver, 20);
+    
     @FindBy(linkText = "Your trips")
     private WebElement YourTrip;
     @FindBy(id = "SignIn")
