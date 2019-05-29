@@ -3,7 +3,9 @@
 <suite name="Suite" parallel="methods" thread-count="4">
 	<test name="Test">
 		<classes>
-			<class name="TestVagrant.autotest.ClearTripBookingTest" />
+			<class name="TestVagrant.autotest.SignInTest" />
+			<class name="TestVagrant.autotest.FlightBookingTest" />
+			<class name="TestVagrant.autotest.HotelBookingTest" />
 		</classes>
 	</test> <!-- Test -->
 	<listeners>
