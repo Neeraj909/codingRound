@@ -16,6 +16,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 
 	private WebDriver webdriver;
+	private WebDriverWait wait;
+	Properties prop=new Properties();
+	String property_file_path=System.getProperty("user.dir")+"\\Resources\\";
+	FileInputStream fis;
 
 	@BeforeSuite
 	@Parameters({ "browserName", "url" })
@@ -44,7 +48,10 @@ public class BaseTest {
 			prefs.put("profile.default_content_setting_values.notifications", 2);
 			options.setExperimentalOption("prefs", prefs);
 			System.setProperty("webdriver.chrome.driver","C:\\Users\\11017\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
- 		webdriver = new ChromeDriver();
+ 		        webdriver = new ChromeDriver();
+                        wait = new WebDriverWait(webdriver, 30);
+ 		        fis = new FileInputStream(property_file_path+"config.properties");
+ 			prop.load(fis);
 			//setWebdriver(new ChromeDriver(options));
 			break;
 		}
@@ -61,6 +68,7 @@ public class BaseTest {
 
 	private void setWebdriver(WebDriver webdriver) {
 		this.webdriver = webdriver;
+               wait = new WebDriverWait(webdriver, 30);
 	}
 
 	@AfterSuite
