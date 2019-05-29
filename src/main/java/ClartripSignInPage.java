@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 public class ClartripSignInPage extends Page {
     
-    @FindBy(linkText = "Your trips")
+    @FindBy(id = "userAccountLink")
     private WebElement YourTrip;
     @FindBy(id = "SignIn")
     private WebElement SignIn;
