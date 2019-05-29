@@ -1,11 +1,18 @@
 
-import com.sun.javafx.PlatformUtil;
+
+package TestVagrant.autotest;
+
+
+
 import TestVagrant.basetest.BaseTest;
 import TestVagrant.page.ClartripSignInPage;
 import TestVagrant.page.Page;
-import org.openqa.selenium.By;
+
+import static org.testng.Assert.assertTrue;
+
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
