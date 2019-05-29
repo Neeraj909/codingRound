@@ -1,8 +1,8 @@
-import com.cleartrip.page.web.ClartripSignInPage;
+
 import com.sun.javafx.PlatformUtil;
-
 import TestVagrant.basetest.BaseTest;
-
+import TestVagrant.page.ClartripSignInPage;
+import TestVagrant.page.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,18 +17,21 @@ public class SignInTest extends BaseTest{
 	WebDriver driver = null;
 	WebDriverWait wait=null;
 	ClartripSignInPage signInPage=null;
+        Page page=null;
 	@BeforeClass
 	public void init()
 	{
 		driver = getWebdriver();
 		wait=getWait();	
 		signInPage=PageFactory.initElements(driver, ClartripSignInPage.class);
+                page=    PageFactory.initElements(driver, Page.class);
 
 	}
 
 	 @Test(priority = 0, description = "Invalid Login Scenario with wrong username and password.")
 	    public void invalidLoginTest_InvalidUserNameInvalidPassword () {       
-
+                 String title = page.getPageTitle();
+		 assertTrue(title.contains("#1 Site"));
 	        Assert.assertTrue(signInPage.isYourTripDisplayed(), "Your trip button is display");
 	        signInPage.YourTrip();
 	        Assert.assertTrue(signInPage.isSignInDisplayed(), "SignIn button in home pasge is display");
